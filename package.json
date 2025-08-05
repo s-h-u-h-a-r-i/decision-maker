@@ -1,0 +1,25 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "build:dev": "vite build --mode decision-maker-5c9a6",
+    "deploy:dev": "firebase deploy --only hosting --project decision-maker-5c9a6",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vite-plugin-solid": "^2.11.6"
+  },
+  "dependencies": {
+    "firebase": "^12.0.0",
+    "solid-js": "^1.9.5"
+  }
+}

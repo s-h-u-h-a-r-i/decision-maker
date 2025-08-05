@@ -1,0 +1,199 @@
+:root {
+  /* Primary Colors - Teal (#03A6A1) */
+  --color-primary-50: #f0fdfc;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #03a6a1;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+
+  /* Primary Colors RGB */
+  --color-primary-50-rgb: 240, 253, 252;
+  --color-primary-100-rgb: 204, 251, 241;
+  --color-primary-200-rgb: 153, 246, 228;
+  --color-primary-300-rgb: 94, 234, 212;
+  --color-primary-400-rgb: 45, 212, 191;
+  --color-primary-500-rgb: 3, 166, 161;
+  --color-primary-600-rgb: 13, 148, 136;
+  --color-primary-700-rgb: 15, 118, 110;
+  --color-primary-800-rgb: 17, 94, 89;
+  --color-primary-900-rgb: 19, 78, 74;
+
+  /* Secondary Colors - Orange/Salmon (#FFA673) */
+  --color-secondary-50: #fff7ed;
+  --color-secondary-100: #ffedd5;
+  --color-secondary-200: #fed7aa;
+  --color-secondary-300: #fdba74;
+  --color-secondary-400: #fb923c;
+  --color-secondary-500: #ffa673;
+  --color-secondary-600: #ea580c;
+  --color-secondary-700: #c2410c;
+  --color-secondary-800: #9a3412;
+  --color-secondary-900: #7c2d12;
+
+  /* Secondary Colors RGB */
+  --color-secondary-50-rgb: 255, 247, 237;
+  --color-secondary-100-rgb: 255, 237, 213;
+  --color-secondary-200-rgb: 254, 215, 170;
+  --color-secondary-300-rgb: 253, 186, 116;
+  --color-secondary-400-rgb: 251, 146, 60;
+  --color-secondary-500-rgb: 255, 166, 115;
+  --color-secondary-600-rgb: 234, 88, 12;
+  --color-secondary-700-rgb: 194, 65, 12;
+  --color-secondary-800-rgb: 154, 52, 18;
+  --color-secondary-900-rgb: 124, 45, 18;
+
+  /* Accent Colors - Red-Orange (#FF4F0F) */
+  --color-accent-50: #fff1f2;
+  --color-accent-100: #ffe4e6;
+  --color-accent-200: #fecdd3;
+  --color-accent-300: #fda4af;
+  --color-accent-400: #fb7185;
+  --color-accent-500: #ff4f0f;
+  --color-accent-600: #e11d48;
+  --color-accent-700: #be123c;
+  --color-accent-800: #9f1239;
+  --color-accent-900: #881337;
+
+  /* Accent Colors RGB */
+  --color-accent-50-rgb: 255, 241, 242;
+  --color-accent-100-rgb: 255, 228, 230;
+  --color-accent-200-rgb: 254, 205, 211;
+  --color-accent-300-rgb: 253, 164, 175;
+  --color-accent-400-rgb: 251, 113, 133;
+  --color-accent-500-rgb: 255, 79, 15;
+  --color-accent-600-rgb: 225, 29, 72;
+  --color-accent-700-rgb: 190, 18, 60;
+  --color-accent-800-rgb: 159, 18, 57;
+  --color-accent-900-rgb: 136, 19, 55;
+
+  /* Background/Surface Colors - Light Cream (#FFE3BB) */
+  --color-background-50: #fffbeb;
+  --color-background-100: #fef3c7;
+  --color-background-200: #fde68a;
+  --color-background-300: #fcd34d;
+  --color-background-400: #fbbf24;
+  --color-background-500: #ffe3bb;
+  --color-background-600: #d97706;
+  --color-background-700: #b45309;
+  --color-background-800: #92400e;
+  --color-background-900: #78350f;
+
+  /* Background Colors RGB */
+  --color-background-50-rgb: 255, 251, 235;
+  --color-background-100-rgb: 254, 243, 199;
+  --color-background-200-rgb: 253, 230, 138;
+  --color-background-300-rgb: 252, 211, 77;
+  --color-background-400-rgb: 251, 191, 36;
+  --color-background-500-rgb: 255, 227, 187;
+  --color-background-600-rgb: 217, 119, 6;
+  --color-background-700-rgb: 180, 83, 9;
+  --color-background-800-rgb: 146, 64, 14;
+  --color-background-900-rgb: 120, 53, 15;
+
+  /* Additional Neutral Colors for Text and Borders */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /* Neutral Colors RGB */
+  --color-neutral-50-rgb: 250, 250, 250;
+  --color-neutral-100-rgb: 245, 245, 245;
+  --color-neutral-200-rgb: 229, 229, 229;
+  --color-neutral-300-rgb: 212, 212, 212;
+  --color-neutral-400-rgb: 163, 163, 163;
+  --color-neutral-500-rgb: 115, 115, 115;
+  --color-neutral-600-rgb: 82, 82, 82;
+  --color-neutral-700-rgb: 64, 64, 64;
+  --color-neutral-800-rgb: 38, 38, 38;
+  --color-neutral-900-rgb: 23, 23, 23;
+
+  /* =================================== */
+  /* SEMANTIC COLOR VARIABLES */
+  /* =================================== */
+
+  /* Core UI Colors */
+  --color-background: var(--color-background-50);
+  --color-foreground: var(--color-neutral-900);
+  --color-muted: var(--color-neutral-100);
+  --color-muted-foreground: var(--color-neutral-500);
+  --color-border: var(--color-neutral-200);
+  --color-input: var(--color-neutral-50);
+  --color-ring: var(--color-primary-500);
+
+  /* Card & Surface Colors */
+  --color-card: var(--color-neutral-50);
+  --color-card-foreground: var(--color-neutral-900);
+  --color-popover: var(--color-neutral-50);
+  --color-popover-foreground: var(--color-neutral-900);
+
+  /* Primary Action Colors */
+  --color-primary: var(--color-primary-500);
+  --color-primary-foreground: var(--color-neutral-50);
+
+  /* Secondary Action Colors */
+  --color-secondary: var(--color-secondary-100);
+  --color-secondary-foreground: var(--color-secondary-900);
+
+  /* Accent Colors */
+  --color-accent: var(--color-accent-500);
+  --color-accent-foreground: var(--color-neutral-50);
+
+  /* Status Colors */
+  --color-destructive: var(--color-accent-500);
+  --color-destructive-foreground: var(--color-neutral-50);
+  --color-success: var(--color-primary-500);
+  --color-success-foreground: var(--color-neutral-50);
+  --color-warning: var(--color-secondary-500);
+  --color-warning-foreground: var(--color-neutral-900);
+
+  /* =================================== */
+  /* SEMANTIC COLOR VARIABLES - RGB */
+  /* =================================== */
+
+  /* Core UI Colors RGB */
+  --color-background-rgb: var(--color-background-50-rgb);
+  --color-foreground-rgb: var(--color-neutral-900-rgb);
+  --color-muted-rgb: var(--color-neutral-100-rgb);
+  --color-muted-foreground-rgb: var(--color-neutral-500-rgb);
+  --color-border-rgb: var(--color-neutral-200-rgb);
+  --color-input-rgb: var(--color-neutral-50-rgb);
+  --color-ring-rgb: var(--color-primary-500-rgb);
+
+  /* Card & Surface Colors RGB */
+  --color-card-rgb: var(--color-neutral-50-rgb);
+  --color-card-foreground-rgb: var(--color-neutral-900-rgb);
+  --color-popover-rgb: var(--color-neutral-50-rgb);
+  --color-popover-foreground-rgb: var(--color-neutral-900-rgb);
+
+  /* Primary Action Colors RGB */
+  --color-primary-rgb: var(--color-primary-500-rgb);
+  --color-primary-foreground-rgb: var(--color-neutral-50-rgb);
+
+  /* Secondary Action Colors RGB */
+  --color-secondary-rgb: var(--color-secondary-100-rgb);
+  --color-secondary-foreground-rgb: var(--color-secondary-900-rgb);
+
+  /* Accent Colors RGB */
+  --color-accent-rgb: var(--color-accent-500-rgb);
+  --color-accent-foreground-rgb: var(--color-neutral-50-rgb);
+
+  /* Status Colors RGB */
+  --color-destructive-rgb: var(--color-accent-500-rgb);
+  --color-destructive-foreground-rgb: var(--color-neutral-50-rgb);
+  --color-success-rgb: var(--color-primary-500-rgb);
+  --color-success-foreground-rgb: var(--color-neutral-50-rgb);
+  --color-warning-rgb: var(--color-secondary-500-rgb);
+  --color-warning-foreground-rgb: var(--color-neutral-900-rgb);
+}

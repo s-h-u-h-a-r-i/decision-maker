@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(max(200px, calc((100% - 4rem) / 5)), 1fr)
+  );
+  grid-auto-rows: minmax(200px, auto);
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}

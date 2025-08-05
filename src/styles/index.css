@@ -1,0 +1,227 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+
+/* =================================== */
+/* SPA APPLICATION LAYOUT */
+/* =================================== */
+
+/* Full viewport setup - no page scrolling */
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Root container fills entire viewport */
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =================================== */
+/* GLOBAL TYPOGRAPHY */
+/* =================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-foreground);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+p {
+  color: var(--color-foreground);
+  line-height: 1.6;
+}
+
+small {
+  color: var(--color-muted-foreground);
+  font-size: 0.875rem;
+}
+
+/* =================================== */
+/* GLOBAL INTERACTIVE ELEMENTS */
+/* =================================== */
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-600);
+  text-decoration: underline;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* =================================== */
+/* FORM ELEMENTS */
+/* =================================== */
+
+input,
+textarea,
+select {
+  background-color: var(--color-input);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  color: var(--color-foreground);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-ring);
+  box-shadow: 0 0 0 3px rgba(var(--color-ring-rgb), 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-muted-foreground);
+}
+
+/* =================================== */
+/* UTILITY CLASSES */
+/* =================================== */
+
+/* Scrollable containers within the app */
+.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar styling */
+.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: var(--color-muted);
+  border-radius: 4px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: var(--color-muted-foreground);
+  border-radius: 4px;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: var(--color-foreground);
+}
+
+/* Text utilities */
+.text-muted {
+  color: var(--color-muted-foreground);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary-600);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Background utilities */
+.bg-muted {
+  background-color: var(--color-muted);
+}
+
+.bg-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+/* Border utilities */
+.border {
+  border: 1px solid var(--color-border);
+}
+
+.border-radius {
+  border-radius: 8px;
+}
+
+/* =================================== */
+/* RESPONSIVE DESIGN */
+/* =================================== */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}

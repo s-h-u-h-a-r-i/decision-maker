@@ -1,0 +1,153 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-background);
+  padding: 1rem;
+}
+
+.loginCard {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow:
+    0 4px 6px -1px rgba(var(--color-neutral-900-rgb), 0.1),
+    0 2px 4px -1px rgba(var(--color-neutral-900-rgb), 0.06);
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+.loginCard h1 {
+  margin-bottom: 0.5rem;
+  color: var(--color-foreground);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.loginCard p {
+  margin-bottom: 2rem;
+  color: var(--color-muted-foreground);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.googleSignInBtn {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.googleSignInBtn:hover:not(:disabled) {
+  background-color: var(--color-primary-600);
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 20px rgba(var(--color-primary-500-rgb), 0.4),
+    0 2px 4px rgba(var(--color-primary-500-rgb), 0.1);
+}
+
+.googleSignInBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.googleSignInBtn:disabled {
+  background-color: var(--color-muted);
+  color: var(--color-muted-foreground);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.googleSignInBtn:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+.errorMessage {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: var(--color-accent-50);
+  border: 1px solid var(--color-accent-200);
+  border-radius: 8px;
+  color: var(--color-accent-700);
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.clearErrorBtn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--color-accent-500);
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.clearErrorBtn:hover {
+  background-color: var(--color-accent-100);
+  color: var(--color-accent-700);
+}
+
+.clearErrorBtn:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* Loading state animation */
+.googleSignInBtn:disabled::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-muted-foreground);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loginContainer {
+    padding: 1rem 0.5rem;
+  }
+
+  .loginCard {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .loginCard h1 {
+    font-size: 1.75rem;
+  }
+}
