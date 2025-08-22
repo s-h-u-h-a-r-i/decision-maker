@@ -32,6 +32,10 @@ const errorMap: Record<string, string> = {
 class AuthService {
   #auth = fbAuth;
 
+  get currentUser(): User | null {
+    return this.#auth.currentUser;
+  }
+
   onAuthStateChanged(callBack: (user: AppUser | null) => void): Unsubscribe {
     return onAuthStateChanged(this.#auth, callBack);
   }

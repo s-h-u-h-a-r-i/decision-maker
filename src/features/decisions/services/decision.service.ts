@@ -1,11 +1,55 @@
+import {
+  collection,
+  getDocsFromServer,
+  query,
+  where,
+  type Firestore,
+} from "firebase/firestore";
+
 import { apiService, ApiService } from "../../api";
+import { firestore } from "../../../configs";
+import { fsPaths } from "../../../utils";
+import { authService, AuthService } from "../../auth/services";
 
 class DecisionService {
-  #apiService: ApiService;
+  #apiService;
+  #authService;
+  #firestore;
 
-  constructor(apiService: ApiService) {
+  constructor(
+    apiService: ApiService,
+    authService: AuthService,
+    firestore: Firestore,
+  ) {
     this.#apiService = apiService;
+    this.#authService = authService;
+    this.#firestore = firestore;
+  }
+
+  async getDecisionCards() {
+    const userId = this.#authService.currentUser?.uid;
+
+    if (!userId) {
+      throw new Error("User ID is not available. User must be authenticated.");
+    }
+
+    const decisionsCollectionRef = collection(
+      this.#firestore,
+      fsPaths.decisions.path,
+    );
+
+    const decisionsQuery = query(
+      decisionsCollectionRef,
+      where("ownerId", "==", userId),
+    );
+
+    const decisionCardsSnapshot = await getDocsFromServer(decisionsQuery);
+    return decisionCardsSnapshot.docs.map((doc) => doc.data());
   }
 }
 
-export const decisionService = new DecisionService(apiService);
+export const decisionService = new DecisionService(
+  apiService,
+  authService,
+  firestore,
+);
