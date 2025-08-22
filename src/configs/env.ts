@@ -12,6 +12,4 @@ export const env = {
   baseApiUrl: getEnvVar("VITE_BASE_API_URL"),
 } as const;
 
-console.log("Loaded env", env);
-
 export type Env = typeof env;

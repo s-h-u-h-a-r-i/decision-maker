@@ -5,6 +5,7 @@ import {
   signOut,
   onAuthStateChanged,
   Unsubscribe,
+  IdTokenResult,
 } from "firebase/auth";
 import { fbAuth } from "../../../configs";
 import { AppUser } from "../types";
@@ -53,6 +54,28 @@ class AuthService {
     }
   }
 
+  async getIdToken(forceRefresh = false): Promise<string | null> {
+    try {
+      const user = this.#auth.currentUser;
+      if (!user) return null;
+      return await user.getIdToken(forceRefresh);
+    } catch (err) {
+      console.error("Failed to get ID token:", err);
+      return null;
+    }
+  }
+
+  async getIdTokenResult(forceRefresh = false): Promise<IdTokenResult | null> {
+    try {
+      const user = this.#auth.currentUser;
+      if (!user) return null;
+      return await user.getIdTokenResult(forceRefresh);
+    } catch (err) {
+      console.error("Failed to get ID token result:", err);
+      return null;
+    }
+  }
+
   #mapFbUserToAppUser(user: User): AppUser {
     return {
       ...user,
@@ -69,3 +92,4 @@ class AuthService {
 }
 
 export const authService = new AuthService();
+export type { AuthService };
