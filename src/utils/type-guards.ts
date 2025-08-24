@@ -25,3 +25,24 @@
 export function isNonEmptyRecord(obj: unknown): obj is Record<string, unknown> {
   return typeof obj === "object" && obj !== null && Object.keys(obj).length > 0;
 }
+
+/**
+ * ### Type guard that checks if a value is a non-empty string.
+ *
+ * This function verifies that the input is a string and has a length greater than zero.
+ *
+ * @param str The value to check
+ * @returns True if the value is a non-empty string, false otherwise
+ *
+ * @example
+ * ```typescript
+ * isNonEmptyString("Hello"); // true
+ * isNonEmptyString(""); // false
+ * isNonEmptyString(null); // false
+ * isNonEmptyString(123); // false
+ * isNonEmptyString([]); // false
+ * ```
+ */
+export function isNonEmptyString(str: unknown): str is string {
+  return typeof str === "string" && str.length > 0;
+}
