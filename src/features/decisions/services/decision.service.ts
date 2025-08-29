@@ -1,5 +1,8 @@
 import {
   collection,
+  deleteDoc,
+  doc,
+  DocumentData,
   getDocsFromServer,
   query,
   where,
@@ -10,6 +13,7 @@ import { apiService, ApiService } from "../../api";
 import { firestore } from "../../../configs";
 import { fsPaths } from "../../../utils";
 import { authService, AuthService } from "../../auth/services";
+import { Decision } from "../types";
 
 class DecisionService {
   #apiService;
@@ -26,7 +30,7 @@ class DecisionService {
     this.#firestore = firestore;
   }
 
-  async getDecisionCards() {
+  async getDecisionCards(): Promise<DocumentData & { id: string }[]> {
     const userId = this.#authService.currentUser?.uid;
 
     if (!userId) {
@@ -44,7 +48,19 @@ class DecisionService {
     );
 
     const decisionCardsSnapshot = await getDocsFromServer(decisionsQuery);
-    return decisionCardsSnapshot.docs.map((doc) => doc.data());
+    return decisionCardsSnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+  }
+
+  async deleteDecisions(decisionIds: string[]): Promise<void> {
+    await Promise.allSettled(
+      decisionIds.map((id) => {
+        const docRef = doc(this.#firestore, fsPaths.decisions.doc(id).path);
+        return deleteDoc(docRef);
+      }),
+    );
   }
 }
 

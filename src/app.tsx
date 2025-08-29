@@ -3,6 +3,7 @@ import { Show, lazy } from "solid-js";
 
 import styles from "./app.module.css";
 import { AuthProvider, useAuth } from "./features/auth/";
+import { DecisionProvider } from "./features/decisions/store";
 
 const Login = lazy(() => import("./features/auth/components/login"));
 const DecisionDashboard = lazy(
@@ -16,7 +17,9 @@ const AppContent: Component = () => {
     <main class={styles.App}>
       <Show when={!auth.state().isLoading} fallback={<div>Loading...</div>}>
         <Show when={auth.state().isAuthenticated} fallback={<Login />}>
-          <DecisionDashboard />
+          <DecisionProvider>
+            <DecisionDashboard />
+          </DecisionProvider>
         </Show>
       </Show>
     </main>
