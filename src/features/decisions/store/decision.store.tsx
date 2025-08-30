@@ -76,10 +76,6 @@ export const DecisionProvider: ParentComponent = (props) => {
           predicate: (val) => isTimestamp(val),
           errorMsg: "createdAt must be a Timestamp",
         },
-        ownerId: {
-          predicate: (val) => isNonEmptyString(val),
-          errorMsg: "ownerId must be a non-empty string",
-        },
         title: {
           predicate: (val) => isNonEmptyString(val),
           errorMsg: "title must be a non-empty string",

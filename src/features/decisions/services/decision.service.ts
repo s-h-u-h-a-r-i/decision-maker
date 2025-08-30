@@ -39,15 +39,12 @@ class DecisionService {
 
     const decisionsCollectionRef = collection(
       this.#firestore,
-      fsPaths.decisions.path,
+      fsPaths.decision.doc(userId).decisions.path,
     );
 
-    const decisionsQuery = query(
+    const decisionCardsSnapshot = await getDocsFromServer(
       decisionsCollectionRef,
-      where("ownerId", "==", userId),
     );
-
-    const decisionCardsSnapshot = await getDocsFromServer(decisionsQuery);
     return decisionCardsSnapshot.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id,
@@ -55,9 +52,18 @@ class DecisionService {
   }
 
   async deleteDecisions(decisionIds: string[]): Promise<void> {
+    const userId = this.#authService.currentUser?.uid;
+
+    if (!userId) {
+      throw new Error("User ID is not available. User must be authenticated.");
+    }
+
     await Promise.allSettled(
       decisionIds.map((id) => {
-        const docRef = doc(this.#firestore, fsPaths.decisions.doc(id).path);
+        const docRef = doc(
+          this.#firestore,
+          fsPaths.decision.doc(userId).decisions.doc(id).path,
+        );
         return deleteDoc(docRef);
       }),
     );
