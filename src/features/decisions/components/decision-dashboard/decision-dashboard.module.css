@@ -1,14 +1,37 @@
 .container {
+  /* Layout variables */
+  --card-min-width: 200px;
+  --card-max-width: 300px;
+  --card-min-height: 200px;
+  --card-max-height: 400px;
+  --gap: 1rem;
+  --padding: 1rem;
+  --max-columns: 5;
+  /* Calculated variables */
+  --padding-total: calc(var(--padding) * 2);
+  --gap-total: calc(var(--gap) * (var(--max-columns) - 1));
+  --non-card-space: calc(var(--padding-total) + var(--gap-total));
+  --max-grid-width: calc(var(--card-max-width) * var(--max-columns));
+  --container-max-width: calc(var(--max-grid-width) + var(--non-card-space));
+
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(
-    auto-fit,
-    minmax(max(200px, calc((100% - 4rem) / 5)), 1fr)
+    auto-fill,
+    minmax(
+      max(
+        var(--card-min-width),
+        calc((100% - var(--non-card-space)) / var(--max-columns))
+      ),
+      var(--card-max-width)
+    )
   );
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: minmax(var(--card-min-height), var(--card-max-height));
   width: 100%;
+  max-width: var(--container-max-width);
   height: 100%;
-  gap: 1rem;
-  padding: 1rem;
+  gap: var(--gap);
+  padding: var(--padding);
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
