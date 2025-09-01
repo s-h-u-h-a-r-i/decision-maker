@@ -2,7 +2,7 @@ import { Component, Show } from "solid-js";
 import { Decision } from "../../types";
 import styles from "./decision-card.module.css";
 
-const DecisionCard: Component<{ decision: Decision }> = (props) => {
+export const DecisionCard: Component<{ decision: Decision }> = (props) => {
   const decision = props.decision;
 
   const displayCompletedDate =
@@ -30,5 +30,3 @@ const DecisionCard: Component<{ decision: Decision }> = (props) => {
     </div>
   );
 };
-
-export default DecisionCard;
